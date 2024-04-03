@@ -15,14 +15,12 @@ import java.util.Map;
 public class FreeMarkerTest {
   @Test
     public void Test() throws IOException, TemplateException {
-    // Create your Configuration instance, and specify if up to what FreeMarker
-// version (here 2.3.32) do you want to apply the fixes that are not 100%
-// backward-compatible. See the Configuration JavaDoc for details.
+
     Configuration configuration= new Configuration(Configuration.VERSION_2_3_32);
-    configuration.setNumberFormat("0.######");
+
 // Specify the source where the template files come from. Here I set a
 // plain directory for it, but non-file-system sources are possible too:
-    configuration.setDirectoryForTemplateLoading(new File("floe-generator-basic/src/main/resources/templates"));
+    configuration.setDirectoryForTemplateLoading(new File("src/main/resources/templates"));
 
 // From here we will set the settings recommended for new projects. These
 // aren't the defaults for backward compatibilty.
@@ -30,6 +28,7 @@ public class FreeMarkerTest {
 // Set the preferred charset template files are stored in. UTF-8 is
 // a good choice in most applications:
     configuration.setDefaultEncoding("UTF-8");
+    configuration.setNumberFormat("0.######");
 
     Template template = configuration.getTemplate("myweb.html.ftl");
 

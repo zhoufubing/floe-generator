@@ -1,18 +1,21 @@
 package com.floe.generator;
 
+import cn.hutool.core.io.FileUtil;
 import com.floe.model.MainTemplateConfig;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
+import javafx.scene.shape.Path;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class DynamicGenerator {
     public static void main(String[] args) throws IOException, TemplateException {
-        String projectPath = System.getProperty("user.dir")+File.separator +"floe-generator-basic";
+
+        String projectPath = System.getProperty("user.dir");
         //test
         System.out.println(projectPath);
 
@@ -49,15 +52,20 @@ public class DynamicGenerator {
 
         //创建模板对象，加载指定模板
         String templateName = new File(inputPath).getName();
-        Template template = configuration.getTemplate(templateName);
+        Template template = configuration.getTemplate(templateName,"utf-8");
 
         //创建模型
         MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();
         mainTemplateConfig.setAuthor("floe");
         mainTemplateConfig.setLoop(false);
         mainTemplateConfig.setOutputText("sum  =  ");
+
+
+        if(!FileUtil.exist(outputPath)){
+            FileUtil.touch(outputPath);
+        }
         //生成
-        Writer out= new FileWriter(outputPath);
+        Writer out= new BufferedWriter(new OutputStreamWriter(Files.newOutputStream(Paths.get(outputPath)), StandardCharsets.UTF_8));
         template.process(model,out);
         out.close();
     }

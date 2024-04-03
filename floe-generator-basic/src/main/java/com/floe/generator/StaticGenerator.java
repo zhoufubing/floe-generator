@@ -24,11 +24,11 @@ public class StaticGenerator {
     public static void main(String[] args) {
         //获取根目录
         String projectPath = System.getProperty("user.dir");
-         System.out.println(projectPath);
+//         System.out.println(projectPath);
         File parentFile = new File(projectPath).getParentFile();
-
+//        System.out.println(parentFile);
         //获取模板代码
-        String inputPath = new File(parentFile, "floe-generator/floe-generator-demo-projects/acm-template").getAbsolutePath();
+        String inputPath = new File(parentFile, "floe-generator-demo-projects/acm-template").getAbsolutePath();
         //直接输出
         String outputPath = projectPath;
         copyFileByHutool(inputPath, outputPath);
