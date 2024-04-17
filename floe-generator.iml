@@ -31,5 +31,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Maven: info.picocli:picocli:4.7.5" level="project" />
+    <orderEntry type="library" name="Maven: junit:junit:4.13.2" level="project" />
   </component>
 </module>

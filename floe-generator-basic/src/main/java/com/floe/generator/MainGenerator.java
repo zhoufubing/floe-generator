@@ -1,5 +1,6 @@
 package com.floe.generator;
 
+//import com.floe.model.MainTemplateConfig;
 import com.floe.model.MainTemplateConfig;
 import freemarker.template.TemplateException;
 
@@ -17,22 +18,25 @@ public class MainGenerator {
      * @throws  IOException
     * */
     public static void doGenerator(Object model) throws TemplateException, IOException {
-        String projectPath = System.getProperty("user.dir");
+        String inputRootPath = "D:\\Work\\ProgramWorkSpace\\java\\floe-generator\\floe-generator-demo-projects\\acm-template-pro";
+        String outputRootPath = "D:\\Work\\ProgramWorkSpace\\java\\floe-generator\\acm-template-pro";
 
-        //整个项目的根路径
-        File parentFile = new File(projectPath).getParentFile();
+        String inputPath;
+        String outputPath;
 
-        //输入路径
-        String inputPath = new File(parentFile, "floe-generator-demo-projects/acm-template").getAbsolutePath();
+        inputPath = new File(inputRootPath, "src/com/floe/acm/MainTemplate.java.ftl").getAbsolutePath();
+        outputPath = new File(outputRootPath,"src/com/floe/acm/MainTemplate.java").getAbsolutePath();
+        DynamicGenerator.doGenerate(inputPath,outputPath,model);
+
+        inputPath = new File(inputRootPath, ".gitignore").getAbsolutePath();
+        outputPath = new File(outputRootPath,".gitignore").getAbsolutePath();
+        StaticGenerator.copyFileByHutool(inputPath,outputPath);
+
+        inputPath = new File(inputRootPath, "README.md").getAbsolutePath();
+        outputPath = new File(outputRootPath,"README.md").getAbsolutePath();
+        StaticGenerator.copyFileByHutool(inputPath,outputPath);
 
 
-        String outputPath = projectPath;
-//        静态文件
-        StaticGenerator.copyFilesByRecursive(inputPath,outputPath);
-//动态文件
-        String inputDynamicFilePath = projectPath + File.separator + "src/main/resources/templates/MainTemplate.java.ftl";
-        String outputDynamicFilePath = outputPath + File.separator +"acm-template/src/com/floe/acm/MainTemplate.java";
-        DynamicGenerator.doGenerate(inputDynamicFilePath,outputDynamicFilePath,model);
 
 
     }

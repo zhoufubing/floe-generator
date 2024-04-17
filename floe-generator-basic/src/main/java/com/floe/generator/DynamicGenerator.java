@@ -5,7 +5,7 @@ import com.floe.model.MainTemplateConfig;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
-import javafx.scene.shape.Path;
+//import javafx.scene.shape.Path;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
