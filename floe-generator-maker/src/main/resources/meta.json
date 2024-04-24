@@ -3,11 +3,12 @@
   "description": "ACM 示例模板生成器",
   "basePackage": "com.floe",
   "version": "1.0",
-  "author": "yupi",
+  "author": "floe",
   "createTime": "2023-11-22",
   "fileConfig": {
-    "inputRootPath": "/Work/ProgramWorkSpace/java/floe-generator/floe-generator-demo-projects/acm-template-pro",
+    "inputRootPath": ".source/acm-template-pro",
     "outputRootPath": "generated",
+    "sourceRootPath": "D:/Work/ProgramWorkSpace/java/floe-generator/floe-generator-demo-projects/acm-template-pro",
     "type": "dir",
     "files": [
       {
