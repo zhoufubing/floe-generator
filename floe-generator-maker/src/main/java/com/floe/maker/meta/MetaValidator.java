@@ -13,6 +13,7 @@ import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MetaValidator {
     public static void doValidAndFill(Meta meta){
@@ -30,8 +31,21 @@ public class MetaValidator {
         }
         //modelConfig默认值
         List<Meta.ModelConfig.ModelInfo> modelInfoList = modelConfig.getModels();
-        if(CollectionUtil.isNotEmpty(modelInfoList)){
+        if(!CollectionUtil.isNotEmpty(modelInfoList)){
+            return;
+        }
             for (Meta.ModelConfig.ModelInfo modelInfo : modelInfoList){
+                //为group，不校验
+                String groupKey = modelInfo.getGroupKey();
+                if(StrUtil.isNotEmpty(groupKey)){
+                    //生成中间参数"--author","--outputText"
+                    List<Meta.ModelConfig.ModelInfo> subModelInfoList = modelInfo.getModels();
+                    String allArgsStr = subModelInfoList.stream().map(subModelInfo -> {
+                        return String.format("\"--%s\"", subModelInfo.getFieldName());
+                    }).collect(Collectors.joining(", "));
+                    modelInfo.setAllArgsStr(allArgsStr);
+                    continue;
+                }
                 //输出路径默认值
                 String fieldName = modelInfo.getFieldName();
                 if(StrUtil.isBlank(fieldName)){
@@ -44,7 +58,6 @@ public class MetaValidator {
 
                 }
             }
-        }
     }
 
     private static void validAndFillConfig(Meta meta) {
@@ -82,6 +95,10 @@ public class MetaValidator {
                 return;
             }
             for (Meta.FileConfig.FileInfo fileInfo : fileInfoList) {
+                String type1 = fileInfo.getType();
+                if(FileTypeEnum.GROUP.getValue().equals(type1)){
+                    continue;
+                }
                 //inputPath:必填
                 String inputPath = fileInfo.getInputPath();
                 if (StrUtil.isBlank(inputPath)) {//outputPath ：默认等于inputPath
