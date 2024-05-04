@@ -1,0 +1,109 @@
+{
+    "name": "acm-template-pro-generator",
+    "description": "ACM 示例模板生成器",
+    "fileConfig": {
+        "sourceRootPath": "D:/Work/ProgramWorkSpace/java/floe-generator/floe-generator-maker/.temp/1787018227404800000/springboot-init",
+        "files": [
+            {
+                "type": "group",
+                "condition": "outputText2",
+                "groupKey": "test",
+                "groupName": "测试分组2",
+                "files": [
+                    {
+                        "inputPath": "src/main/java/com/floe/springbootinit/constant/UserConstant.java",
+                        "outputPath": "src/main/java/com/floe/springbootinit/constant/UserConstant.java",
+                        "type": "file",
+                        "generateType": "static"
+                    },
+                    {
+                        "inputPath": "src/main/java/com/floe/springbootinit/common/BaseResponse.java",
+                        "outputPath": "src/main/java/com/floe/springbootinit/common/BaseResponse.java",
+                        "type": "file",
+                        "generateType": "static"
+                    },
+                    {
+                        "inputPath": "src/main/java/com/floe/springbootinit/common/BaseResponse.java.ftl",
+                        "outputPath": "src/main/java/com/floe/springbootinit/common/BaseResponse.java.ftl",
+                        "type": "file",
+                        "generateType": "static"
+                    }
+                ]
+            },
+            {
+                "inputPath": "src/main/java/com/floe/springbootinit/controller/PostController.java.ftl",
+                "outputPath": "src/main/java/com/floe/springbootinit/controller/PostController.java.ftl",
+                "type": "file",
+                "generateType": "static"
+            },
+            {
+                "inputPath": "src/main/java/com/floe/springbootinit/controller/PostController.java",
+                "outputPath": "src/main/java/com/floe/springbootinit/controller/PostController.java",
+                "type": "file",
+                "generateType": "static"
+            },
+            {
+                "inputPath": "src/main/java/com/floe/springbootinit/common/DeleteRequest.java",
+                "outputPath": "src/main/java/com/floe/springbootinit/common/DeleteRequest.java",
+                "type": "file",
+                "generateType": "static"
+            },
+            {
+                "inputPath": "src/main/java/com/floe/springbootinit/common/BaseResponse.java",
+                "outputPath": "src/main/java/com/floe/springbootinit/common/BaseResponse.java",
+                "type": "file",
+                "generateType": "static"
+            },
+            {
+                "inputPath": "src/main/java/com/floe/springbootinit/controller/UserController.java",
+                "outputPath": "src/main/java/com/floe/springbootinit/controller/UserController.java",
+                "type": "file",
+                "generateType": "static"
+            },
+            {
+                "inputPath": "src/main/java/com/floe/springbootinit/common/BaseResponse.java.ftl",
+                "outputPath": "src/main/java/com/floe/springbootinit/common/BaseResponse.java.ftl",
+                "type": "file",
+                "generateType": "static"
+            },
+            {
+                "inputPath": "src/main/java/com/floe/springbootinit/common/ResultUtils.java.ftl",
+                "outputPath": "src/main/java/com/floe/springbootinit/common/ResultUtils.java.ftl",
+                "type": "file",
+                "generateType": "static"
+            },
+            {
+                "inputPath": "src/main/java/com/floe/springbootinit/common/ResultUtils.java",
+                "outputPath": "src/main/java/com/floe/springbootinit/common/ResultUtils.java",
+                "type": "file",
+                "generateType": "static"
+            },
+            {
+                "inputPath": "src/main/java/com/floe/springbootinit/common/ErrorCode.java",
+                "outputPath": "src/main/java/com/floe/springbootinit/common/ErrorCode.java",
+                "type": "file",
+                "generateType": "static"
+            },
+            {
+                "inputPath": "src/main/java/com/floe/springbootinit/common/PageRequest.java",
+                "outputPath": "src/main/java/com/floe/springbootinit/common/PageRequest.java",
+                "type": "file",
+                "generateType": "static"
+            },
+            {
+                "inputPath": "src/main/java/com/floe/springbootinit/controller/UserController.java.ftl",
+                "outputPath": "src/main/java/com/floe/springbootinit/controller/UserController.java.ftl",
+                "type": "file",
+                "generateType": "static"
+            }
+        ]
+    },
+    "modelConfig": {
+        "models": [
+            {
+                "fieldName": "className",
+                "type": "String"
+            }
+        ]
+    }
+}

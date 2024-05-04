@@ -36,6 +36,7 @@ public class ScriptGenerator {
 
     public static void main(String[] args) {
         String outputPath = System.getProperty("use.dir") + File.separator +"generator";
+        System.out.println(outputPath);
         doGenerate(outputPath,"");
     }
 }

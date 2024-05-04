@@ -17,7 +17,7 @@ public class DynamicGenerator {
 
         String projectPath = System.getProperty("user.dir");
         //test
-        System.out.println(projectPath);
+        System.out.println("sd:"+projectPath);
 
         String inputPath = projectPath + File.separator+"src/main/resources/templates/MainTemplate.java.ftl";
         String outputPath = projectPath+File.separator + "MainTemplate.java";

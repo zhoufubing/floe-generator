@@ -10,14 +10,14 @@ public class DataModel {
     /**
     *生成循环
      */
-    public boolean loop;
+    private boolean loop;
     /**
     作者注释
     *
     */
-    public String author = "floe";
+    private String author = "floe";
     /**
      * 输出
     * */
-    public String outputText = "sum = ";
+    private String outputText = "sum = ";
 }

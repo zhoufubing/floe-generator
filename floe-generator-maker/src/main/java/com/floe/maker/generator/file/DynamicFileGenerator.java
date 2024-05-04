@@ -1,7 +1,6 @@
 package com.floe.maker.generator.file;
 
 import cn.hutool.core.io.FileUtil;
-import com.floe.maker.model.DataModel;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -37,11 +36,11 @@ public class DynamicFileGenerator {
         String templateName = new File(inputPath).getName();
         Template template = configuration.getTemplate(templateName,"utf-8");
 
-        //创建模型
-        DataModel dataModel = new DataModel();
-        dataModel.setAuthor("floe");
-        dataModel.setLoop(false);
-        dataModel.setOutputText("sum  =  ");
+//        //创建模型
+//        DataModel dataModel = new DataModel();
+//        dataModel.setAuthor("floe");
+//        dataModel.setLoop(false);
+//        dataModel.setOutputText("sum  =  ");
 
         //文件不存在则创建文件和目录
         if(!FileUtil.exist(outputPath)){

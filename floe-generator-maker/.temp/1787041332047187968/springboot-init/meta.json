@@ -1,0 +1,49 @@
+{
+    "name": "acm-template-pro-generator",
+    "description": "ACM 示例模板生成器",
+    "fileConfig": {
+        "sourceRootPath": "D:/Work/ProgramWorkSpace/java/floe-generator/floe-generator-maker/.temp/1787041332047187968/springboot-init",
+        "files": [
+            {
+                "type": "group",
+                "condition": "outputText2",
+                "groupKey": "test",
+                "groupName": "测试分组2",
+                "files": [
+                    {
+                        "inputPath": "src/main/java/com/floe/springbootinit/common/BaseResponse.java",
+                        "outputPath": "src/main/java/com/floe/springbootinit/common/BaseResponse.java",
+                        "type": "file",
+                        "generateType": "static"
+                    },
+                    {
+                        "inputPath": "src/main/resources/application.yml",
+                        "outputPath": "src/main/resources/application.yml.ftl",
+                        "type": "file",
+                        "generateType": "dynamic"
+                    }
+                ]
+            }
+        ]
+    },
+    "modelConfig": {
+        "models": [
+            {
+                "groupKey": "mysql",
+                "groupName": "数据库配置",
+                "models": [
+                    {
+                        "fieldName": "url",
+                        "type": "String",
+                        "defaultValue": "jdbc:mysql://localhost:3306/my_db"
+                    },
+                    {
+                        "fieldName": "username",
+                        "type": "String",
+                        "defaultValue": "root"
+                    }
+                ]
+            }
+        ]
+    }
+}

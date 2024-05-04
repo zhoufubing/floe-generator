@@ -16,6 +16,8 @@ public class Main {
 //        args =new String[]{"list"};
 //        CommandExecutor commandExecutor = new CommandExecutor();
 //        commandExecutor.doExecute(args);
+        String projectPath = System.getProperty("use.dir");
+        System.out.println(projectPath);
         MainGenerator mainGenerator = new MainGenerator();
         mainGenerator.doGenerate();
     }
