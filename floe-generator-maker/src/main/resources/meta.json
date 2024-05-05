@@ -12,16 +12,23 @@
     "type": "dir",
     "files": [
       {
+        "inputPath": "src/com/floe/acm/MainTemplate.java.ftl",
+        "outputPath": "src/com/floe/acm/MainTemplate.java",
+        "type": "file",
+        "generateType": "dynamic"
+      },
+      {
         "groupKey": "git",
         "groupName": "开源",
         "type": "group",
         "condition": "needGit",
         "files": [
+
           {
             "inputPath": ".gitignore",
             "outputPath": ".gitignore",
             "type": "file",
-            "generateType": "static",
+            "generateType": "static"
 
           },
           {
@@ -31,12 +38,6 @@
             "generateType": "static"
           }
         ]
-      },
-      {
-        "inputPath": "src/com/floe/acm/MainTemplate.java.ftl",
-        "outputPath": "src/com/floe/acm/MainTemplate.java",
-        "type": "file",
-        "generateType": "dynamic"
       }
     ]
   },
@@ -46,7 +47,8 @@
         "fieldName": "needGit",
         "type": "boolean",
         "description": "是否生成.gitignore文件",
-        "defaultValue": true
+        "defaultValue": true,
+        "abbr": "l"
       },
       {
         "fieldName": "loop",
@@ -78,7 +80,6 @@
           }
         ]
       }
-
     ]
   }
 }

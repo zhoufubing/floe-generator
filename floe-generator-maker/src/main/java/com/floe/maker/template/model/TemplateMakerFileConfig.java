@@ -24,6 +24,10 @@ public class TemplateMakerFileConfig {
          * 文件（目录）路径
          */
         private String path;
+        /**
+         * 控制单个文件是否生成
+         */
+        private String condition;
 
         /**
          * 文件过滤配置
